@@ -1,0 +1,327 @@
+[
+  {
+    "name": "shift",
+    "description": "Shift commands",
+    "options": [
+      {
+        "type": 1,
+        "name": "start",
+        "description": "Start a shift",
+        "options": [
+          {
+            "type": 3,
+            "name": "type",
+            "description": "Shift type",
+            "required": false
+          }
+        ]
+      },
+      {
+        "type": 1,
+        "name": "pause",
+        "description": "Pause your active shift"
+      },
+      {
+        "type": 1,
+        "name": "resume",
+        "description": "Resume a paused shift"
+      },
+      {
+        "type": 1,
+        "name": "end",
+        "description": "End your active shift"
+      },
+      {
+        "type": 1,
+        "name": "logs",
+        "description": "View your shift logs",
+        "options": [
+          {
+            "type": 4,
+            "name": "limit",
+            "description": "Max lines",
+            "required": false
+          }
+        ]
+      },
+      {
+        "type": 1,
+        "name": "leaderboard",
+        "description": "View shift leaderboard",
+        "options": [
+          {
+            "type": 3,
+            "name": "type",
+            "description": "Filter by shift type",
+            "required": false
+          }
+        ]
+      },
+      {
+        "type": 1,
+        "name": "panel",
+        "description": "Open shift control panel"
+      },
+      {
+        "type": 1,
+        "name": "active",
+        "description": "Show all active shifts"
+      }
+
+    ]
+  },
+  {
+    "name": "shift-manage",
+    "description": "Admin shift management",
+    "options": [
+      {
+        "type": 1,
+        "name": "bulk-end",
+        "description": "End multiple shifts",
+        "options": [
+          {
+            "type": 6,
+            "name": "user",
+            "description": "Filter by user",
+            "required": false
+          },
+          {
+            "type": 3,
+            "name": "before",
+            "description": "Before date YYYY-MM-DD",
+            "required": false
+          }
+        ]
+      },
+      {
+        "type": 1,
+        "name": "bulk-delete",
+        "description": "Delete multiple shifts",
+        "options": [
+          {
+            "type": 6,
+            "name": "user",
+            "description": "Filter by user",
+            "required": false
+          },
+          {
+            "type": 3,
+            "name": "before",
+            "description": "Before date YYYY-MM-DD",
+            "required": false
+          },
+          {
+            "type": 3,
+            "name": "ids",
+            "description": "Comma-separated IDs",
+            "required": false
+          }
+        ]
+      },
+      {
+        "type": 1,
+        "name": "menu",
+        "description": "Open admin shift menu for a specific shift",
+        "options": [
+          {
+            "type": 4,
+            "name": "id",
+            "description": "Shift ID",
+            "required": false
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "loa",
+    "description": "Leave of Absence commands",
+    "options": [
+      {
+        "type": 1,
+        "name": "request",
+        "description": "Request LoA",
+        "options": [
+          {
+            "type": 3,
+            "name": "duration",
+            "description": "e.g. 3d, 2w",
+            "required": true
+          },
+          {
+            "type": 3,
+            "name": "reason",
+            "description": "Reason for LoA",
+            "required": false
+          }
+        ]
+      },
+      {
+        "type": 1,
+        "name": "list",
+        "description": "List your LoAs"
+      },
+      {
+        "type": 1,
+        "name": "status",
+        "description": "Check your LoA status"
+      },
+      {
+        "type": 1,
+        "name": "manage",
+        "description": "Open LoA management menu"
+      }
+    ]
+  },
+  {
+    "name": "loa-manage",
+    "description": "Admin LoA management",
+    "options": [
+      {
+        "type": 1,
+        "name": "approve",
+        "description": "Approve LoA",
+        "options": [
+          {
+            "type": 4,
+            "name": "id",
+            "description": "LoA ID",
+            "required": true
+          },
+          {
+            "type": 3,
+            "name": "note",
+            "description": "Optional note",
+            "required": false
+          }
+        ]
+      },
+      {
+        "type": 1,
+        "name": "deny",
+        "description": "Deny LoA",
+        "options": [
+          {
+            "type": 4,
+            "name": "id",
+            "description": "LoA ID",
+            "required": true
+          },
+          {
+            "type": 3,
+            "name": "note",
+            "description": "Optional note",
+            "required": false
+          }
+        ]
+      },
+      {
+        "type": 1,
+        "name": "list",
+        "description": "List pending LoAs",
+        "options": [
+          {
+            "type": 4,
+            "name": "limit",
+            "description": "Maximum number of entries",
+            "required": false
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "bot-manage",
+    "description": "Manage bot settings (admin)",
+    "options": [
+      { "type": 1, "name": "view", "description": "View current bot settings" },
+      {
+        "type": 1,
+        "name": "set-shift-log",
+        "description": "Set shift log channel",
+        "options": [
+          { "type": 3, "name": "channel", "description": "channel id", "required": true }
+        ]
+      },
+      {
+        "type": 1,
+        "name": "set-report-channel",
+        "description": "Set report channel",
+        "options": [
+          { "type": 3, "name": "channel", "description": "channel id", "required": true }
+        ]
+      },
+      {
+        "type": 1,
+        "name": "set-role",
+        "description": "Set role for shift type",
+        "options": [
+          { "type": 3, "name": "type", "description": "Shift type", "required": true },
+          { "type": 3, "name": "roleid", "description": "Role ID", "required": true }
+        ]
+      },
+      {
+        "type": 1,
+        "name": "toggle-one-shift",
+        "description": "Toggle single-active-shift (on/off)",
+        "options": [
+          { "type": 3, "name": "on-off", "description": "Toggle it On or Off", "required": true }
+        ]
+      },
+      {
+        "type": 1,
+        "name": "set-requirement",
+        "description": "Set requirement time in minutes",
+        "options": [
+          { "type": 4, "name": "minutes", "description": "minutes", "required": true }
+        ]
+      },
+      {
+        "type": 1,
+        "name": "set-report-schedule",
+        "description": "Set automatic report schedule (HH:MM, day)",
+        "options": [
+          { "type": 3, "name": "time", "description": "HH:MM in 24h", "required": true },
+          { "type": 4, "name": "interval-days", "description": "7/14/21", "required": true }
+        ]
+      },
+      {
+        "type": 1,
+        "name": "set-admin-shift-logs",
+        "description": "Set channel for ADMIN shift logs",
+        "options": [
+         {
+            "type": 7,
+            "name": "channel",
+            "description": "Channel for admin shift logs",
+            "required": true
+         }
+       ]
+      }
+    ]
+  },
+  {
+    "name": "report",
+    "description": "Manage reports",
+    "options": [
+      {
+        "type": 1,
+        "name": "setup",
+        "description": "Setup automatic report",
+        "options": [
+          { "type": 3, "name": "time", "description": "HH:MM in 24h", "required": true },
+          { "type": 4, "name": "interval-days", "description": "Interval in days", "required": true }
+        ]
+      },
+      {
+        "type": 1,
+        "name": "run",
+        "description": "Run a manual report",
+        "options": [
+          { "type": 4, "name": "days", "description": "7/14/21", "required": true },
+          { "type": 3, "name": "type", "description": "Shift type (optional)", "required": false }
+        ]
+      }
+    ]
+  }
+]

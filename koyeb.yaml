@@ -1,0 +1,19 @@
+name: discord-bot
+services:
+  - name: bot
+    type: web
+    env:
+      TOKEN: ${TOKEN}
+      CLIENT_ID: ${CLIENT_ID}
+      GUILD_ID: ${GUILD_ID}
+    build:
+      type: node
+    run:
+      cmd: "node index.js"
+    ports:
+      - port: 3000
+        http: true
+    mounts:
+      - type: volume
+        name: sqlite-data
+        path: /app
